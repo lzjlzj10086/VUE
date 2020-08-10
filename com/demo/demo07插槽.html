@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VUE第一个程序</title>
+    <script src="../js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <todo>
+        <title slot="title" v-bind:todotitle="titles"></title>
+        <items slot="items" v-for="item in todoItems" v-bind:todoitems="item"></items>
+    </todo>
+</div>
+<script>
+    Vue.component('todo',{
+        template: '<div>\
+                   <slot name="title"></slot>\
+                   <ul>\
+                   <slot name="items"></slot>\
+                   </ul>\
+            </div>'
+    });
+    Vue.component('title',{
+        props: ['todotitle'],
+        template: '<h2>{{todotitle}}</h2>'
+    });
+    Vue.component('items',{
+        props: ['todoitems'],
+        template: '<li>{{todoitems}}</li>'
+    })
+    var vue = new Vue({
+        el: "#app",
+        data:{
+            titles: "java全栈",
+            todoItems: ['java基础','java高级编程','javaWeb','SSM框架']
+        }
+    });
+</script>
+</body>
+</html>

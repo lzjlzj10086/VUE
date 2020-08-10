@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断与循环</title>
+    <script src="../js/vue.min.js"></script>
+</head>
+<body>
+---------判断----------
+<div id="app">
+    <h2 v-if="boolean">vueTrue</h2>
+    <h2 v-else>vuefalse</h2>
+</div>
+---------循环----------
+<div id="app2">
+    <h1 v-for="item in items">
+        {{item.message}}
+    </h1>
+</div>
+<script>
+    var vue = new Vue({
+        el: "#app",
+        data: {
+            boolean: true
+        }
+    });
+    var vueone = new Vue({
+        el: "#app2",
+        data: {
+            items: [
+                {
+                    message:"hello jave"
+                },
+                {
+                    message:"hello c++"
+                }
+            ]
+        }
+    });
+</script>
+</body>
+</html>

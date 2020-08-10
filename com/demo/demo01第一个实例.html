@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VUE第一个程序</title>
+    <script src="../js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    {{message}}
+</div>
+<script>
+    var vue = new Vue({
+        el: "#app",
+        data:{
+            message:"hello vue!!!"
+        }
+    });
+</script>
+</body>
+</html>
